@@ -76,3 +76,6 @@
 (setq markdown-command "pandoc -s --mathjax")
 (setq markdown-enable-math t)
 (add-to-list 'exec-path "/home/user/.local/share/pnpm")
+(setq c-basic-offset 2)
+
+(setq doom-theme 'doom-gruvbox)
