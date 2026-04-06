@@ -201,18 +201,21 @@
 (use-package obsidian
   :config
   (global-obsidian-mode t)
-  (obsidian-backlinks-mode t)
+  ;;(obsidian-backlinks-mode t)
   :custom
   ;; location of obsidian vault
-  (cond ((string= system-name "homovault")
-         (obsidian-directory "/home/user/homovault"))
-        ((string= system-name "OGNJEN-LENOVO")
-         (obsidian-directory "/mnt/c/Users/ognjen.cavic/Documents/homovault")
-         (0)))
+  (obsidian-directory
+   (cond
+    ((string-equal system-name "OGNJEN-LENOVO") "/mnt/c/Users/ognjen.cavic/Documents/homovault")
+    (t "/home/user/homovault")
+    )
+   )
   ;; Default location for new notes from `obsidian-capture'
   (obsidian-inbox-directory "slipbox")
+  (obsidian-templates-directory "templates")
   ;; Useful if you're going to be using wiki links
   (markdown-enable-wiki-links t)
+
 
   ;; These bindings are only suggestions; it's okay to use other bindings
   :bind (:map obsidian-mode-map
