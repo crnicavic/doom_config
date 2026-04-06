@@ -204,7 +204,11 @@
   (obsidian-backlinks-mode t)
   :custom
   ;; location of obsidian vault
-  (obsidian-directory "/mnt/c/Users/ognjen.cavic/Documents/homovault/")
+  (cond ((string= system-name "homovault")
+         (obsidian-directory "/home/user/homovault"))
+        ((string= system-name "OGNJEN-LENOVO")
+         (obsidian-directory "/mnt/c/Users/ognjen.cavic/Documents/homovault")
+         (0)))
   ;; Default location for new notes from `obsidian-capture'
   (obsidian-inbox-directory "slipbox")
   ;; Useful if you're going to be using wiki links
