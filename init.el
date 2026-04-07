@@ -229,3 +229,9 @@
               ("C-c C-p" . obsidian-jump)
               ;; Follow a backlink for the current file
               ("C-c C-b" . obsidian-backlink-jump)))
+
+(defun obsidian-update-cache ()
+  (obsidian-update)
+)
+
+(add-hook 'after-init-hook #'obsidian-update-cache)
