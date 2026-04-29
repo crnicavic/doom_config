@@ -207,6 +207,7 @@
   (obsidian-directory
    (cond
     ((string-equal system-name "OGNJEN-LENOVO") "/mnt/c/Users/ognjen.cavic/Documents/homovault")
+    ((string-equal system-name "work") "/ssh:user@homovault:/home/user/homovault/")
     (t "/home/user/homovault")
     )
    )
